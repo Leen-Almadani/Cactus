@@ -1,9 +1,9 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
     close_btn = document.getElementById('nav-close'),
-    toggel_btn = document.getElementById('nav-toggel');
+    toggle_btn = document.getElementById('nav-toggle');
 
-toggel_btn.addEventListener('click', () => {
+toggle_btn.addEventListener('click', () => {
     navMenu.classList.add('show-menu');
 })
 close_btn.addEventListener('click', () => {
@@ -40,7 +40,26 @@ const ShowScrollUp = () => {
 }
 window.addEventListener('scroll',ShowScrollUp)
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]');
+const scrollActive = () => {
+    const scrollDown = window.scrollY
+    
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
 
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+            sectionClass.classList.add('active-link')
+        }
+        else {
+            sectionClass.classList.remove('active-link')
+        }
+    })
+}
+
+window.addEventListener('scroll',scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
