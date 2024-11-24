@@ -484,6 +484,19 @@ img {
   text-align: center;
   font-size: var(--small-font-size);
 }
+.footer__myname {
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+}
+.footer__myname a {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+.footer__myname a:hover {
+  color: var(--first-color);
+}
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -537,6 +550,9 @@ img {
   .footer__content {
     grid-template-columns: max-content;
   }
+  .footer__myname {
+    margin-top: 1rem;
+  }
 }
 /* For medium devices */
 @media screen and (min-width: 576px) {
@@ -552,6 +568,9 @@ img {
   }
   .footer__content {
     grid-template-columns: repeat(3, max-content);
+  }
+  .footer__myname {
+    margin-top: 1.5rem;
   }
 }
 
@@ -572,6 +591,9 @@ img {
   .footer__container {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
+  }
+  .footer__myname {
+    margin-top: 1.5rem;
   }
 }
 /* For large devices */
@@ -715,6 +737,7 @@ img {
   .footer__copy {
     margin-top: 7.5rem;
   }
+
   .scrollup {
     right: 3rem;
   }
