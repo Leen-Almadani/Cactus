@@ -591,6 +591,12 @@ img {
   }
 }
 /* For large devices */
+@media (min-width: 1151px) {
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+}
 @media screen and (min-width: 1150px) {
   .container {
     margin-inline: auto;
@@ -604,10 +610,7 @@ img {
   .nav {
     height: calc(var(--header-height) + 2rem);
   }
-  .nav__toggle,
-  .nav__close {
-    display: none;
-  }
+
   .nav__logo i {
     font-size: 1.5rem;
   }
